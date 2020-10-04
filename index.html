@@ -1,0 +1,129 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Anschreiben--Naim Abbasi Darab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../JavaScript-work/src/style.css" >
+  </head>
+<!--this project has done on 4 oct 2020 by naim-->
+  <body class="body">
+    <!-- Button to generate PDF. -->
+    <button onclick="test()">Export</button>
+
+    <div id="root">
+
+<div id="rightSide"> 
+<p>Naim, Abbasi Darab</p>
+<p>Laleh Strasse 5177957114</p>
+<p>Tabriz</p>
+<p>Iran</p>
+<p>0098 /0914 315 9859</p>
+<p>abbasi.naim@gmail.com</p>
+
+  </div>
+<div id="leftSide">
+<p><input class="input" type="text" placeholder="Firma" maxlength="100" ></p>
+<span>
+<select id="select" name="gender" onchange="genders(this);">
+  <option value="Herr" selected>Herr</option>
+  <option value="Frau">Frau</option>
+   <option value="Whom"></option> 
+</select>
+
+<input id="nameSprachen" class="input" type="text" placeholder="wen es angeht" oninput="getInputText();"></span><br/>
+<p><input class="input" type="text" placeholder="Strasse"></p>
+<p><input class="input" type="text" placeholder="Ort"></p>
+<p><input class="input" type="text" placeholder="Land"></p><br/>
+<p><label id="label">Tabriz,</label> 
+<span id="datetime"></span>
+<script>var dt = new Date();
+var date = dt.getDate();
+    var year = dt.getFullYear();
+    var month = dt.getMonth();
+    var monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
+    month = monthArr[month];
+    document.getElementById("datetime").innerHTML=date+". "+month+" "+year;
+  </script>
+  </p>
+  <p><label class="labelBold">Bewerbung als</label>
+  <input id="arbeitName" class="labelBold" type="text" maxlength="100" placeholder="SharePoint Administrator"
+   oninput="arbeiteName();"></p><br/>
+  <div id="genderTitle" class="titleStyle"></div>
+  <div class="divPadd"></div>
+  <div id="gender" class="titleStyle"></div>
+  <div class="titleStyle" id="inputValue"></div>
+</div><br/>
+<span >Hiermit bewerbe ich mich um die von ihnen ausgeschriebene Stelle Zum </span>
+<span id="showArbeitNameInSentence" ></span>
+<span class="ContentStyle"> und lege Ihnen meine aktuellen Bewerbungsunterlagen vor.</span><br/><br/>
+<div class="ContentStyle" >Im Moment absolviere ich einen Deutschkurs auf der Niveaustufe B1. Ich verbessere
+   stetig meine Kenntnisse im IT-Bereich, wie z.B. Programmierung und SharePoint und verbringe mehr Zeit mit
+    dem Lernen. Außerdem halte ich mich ständig über Erneuerungen im IT – Bereich auf dem Laufenden. Bis vor
+     einigen Monaten arbeitete ich als Scrum Master und Programmierer und SharePoint und SQL Server 
+     Administrator bei der Firma Shoniz welches eines der größten Schokoladenunternehmen im Iran.</div><br/><br/>
+    <div class="ContentStyle">Ich arbeite gerne im Team. Ich bin verantwortungsbewusst, zuverlässig und geduldig. Zudem 
+      bringe ich unternehmerisches Denken mit. Meine persönlichen Kompetenzen wie Zuverlässigkeit, Genauigkeit
+       und eine sehr schnelle Auffassungsgabe und meine fachlichen Stärken, möchte ich in Ihrem Betrieb
+        Investieren und die Chance bekommen meinen Beruf bei ihnen auszuüben.</div><br/><br/>
+        <div class="ContentStyle">Ich hoffe, dass ich Ihr Interesse geweckt habe und freue mich über eine Antwort. Gerne
+           würde ich vorab auch ein Praktikum bei Ihnen absolvieren, um meine Fähigkeiten und meinen 
+           Willen unter Beweis zu stellen. Ich hoffe, dass meine Herkunft keine Einschränkung bei der
+            Einreichung meiner Bewerbung darstellt.</div><br/><br/><br/>
+            <div class="divEndStyle">Mit freundlichen Grüßen</div><br/>
+            <div class="divEndStyle">Naim Abbasi Darab</div>
+
+    </div>
+    <!-- Include html2pdf bundle. -->
+    <script src="../JavaScript-work/dist/html2pdf.bundle.min.js"></script>
+
+    <script>
+      function test() {
+        // Get the element.
+        var element = document.getElementById('root');
+        var fileName = "-Anschreiben - Naim Abassi Darab";
+        var getNum = prompt("Enter Number Of Your Last Anschreiben");
+        
+        // Generate the PDF.
+        html2pdf().from(element).set({
+          margin: 0.75,
+          filename: getNum + fileName,
+          html2canvas: { scale: 2 },
+          jsPDF: {orientation: 'portrait', unit: 'in', format: 'A4', compressPDF: true}
+        }).save();
+      }
+    </script>
+    <script>
+ function genders(element) {
+    var text = element.options[element.selectedIndex].text;
+    document.getElementById("gender").innerHTML = text;
+    var manlich = "Herr";
+    var weiblich = "Frau";
+
+switch (document.getElementById("gender").innerHTML) {
+  case manlich:
+  document.getElementById("genderTitle").innerHTML = "Sehr geehrter" 
+    break;
+  case weiblich:
+  document.getElementById("genderTitle").innerHTML = "Sehr geehrte"
+  break;
+  default:
+  document.getElementById("genderTitle").innerHTML = "Sehr geehrte Damen und Herren"
+}
+ }
+  </script>
+  <script>
+    function getInputText() {
+      var inputText = document.getElementById("nameSprachen").value;
+      document.getElementById("inputValue").innerHTML = inputText; 
+    }
+  </script>
+  <script>
+    function arbeiteName() {
+      var getArbeit = document.getElementById("arbeitName").value;
+      document.getElementById("showArbeitNameInSentence").innerHTML = getArbeit;
+      
+    }
+  </script>
+  </body>
+</html>
