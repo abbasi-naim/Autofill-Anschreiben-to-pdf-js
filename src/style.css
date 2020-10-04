@@ -1,0 +1,124 @@
+#rightSide{
+    font-family: calibri;
+    font-style: normal;
+    color: black;
+    text-align: right;
+    font-size: 14.66px;
+}
+
+#leftSide{
+    font-family: calibri;
+    font-style: normal;
+    color:black;
+    text-align: left;
+    font-size: 14.66px;
+}
+body {
+    size: 21cm 29.7cm;
+    margin: 2mm 10mm 5mm 10mm;
+     /* change the margins as you want them to be. */
+}
+
+input{
+    border-color: white;
+    border: white;  
+    color:black;
+    font-size: 14.66px;
+    font-family: calibri;
+    text-align: left;
+    width: 25%;
+}
+
+select{
+    border-color: white;
+    border: white;  
+    color:black;
+    font-size: 14.66px;
+    font-family: calibri;
+    width: 7mm;
+    max-width: 7mm;
+    
+}
+
+label{
+  border-color: white;
+  border: white;  
+  color:black;
+  font-size: 14.66px;
+  font-family: calibri;
+}
+
+span{
+  border-color: white;
+  border: white;  
+  color:black;
+  font-size: 14.66px;
+  font-family: calibri;
+}
+
+.labelBold{
+  border-color: white;
+  border: white;  
+  color:black;
+  font-size: 14.66px;
+  font-family: calibri;
+  font-weight: bold;
+  width:50%;
+}
+
+.titleStyle{
+  border-color: white;
+  border: white;  
+  color:black;
+  font-size: 14.66px;
+  font-family: calibri;
+  display:inline;
+}
+
+.divPadd{
+  padding-right: 2px;
+  display: inline;
+}
+
+p{
+  border-color: white;
+  border: white;  
+  color:black;
+  font-size: 14.66px;
+  font-family: calibri;
+}
+.DivStartStyle{
+  border-color: white;
+  border: white;  
+  color:black;
+  font-size: 14.66px;
+  font-family: calibri;
+   display: inline; 
+
+}
+
+.divEndStyle{
+  border-color: white;
+  border: white;  
+  color:black;
+  font-size: 14.66px;
+  font-family: calibri;
+  display:inline;
+  justify-content: left;
+}
+
+.ContentStyle{
+  border-color: white;
+  border: white;  
+  color:black;
+  font-size: 14.66px;
+  font-family: calibri;
+  justify-content: center;
+  text-align:justify;
+}
+
+.inputSex
+{
+  width: 5cm;
+  max-width: 5cm;
+}
